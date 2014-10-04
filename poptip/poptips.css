@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.ptWrapper {
+	position: relative;
+	display: inline-block;
+	background: transparent;
+}
+
+img {
+	max-width: 100%;
+	background-color: white;
+}
+
+.anchor {
+	position: absolute;
+	background-color: rgba(0,0,0,.87);
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	border: white;
+	border: 1px solid rgba(0,0,0,1);
+	box-shadow: 0 1px 3px -1px rgba(0,0,0,0.8),inset 0 0 1px rgba(255,255,255,0.07),inset 0 0 2px rgba(255,255,255,0.15);
+/*	-webkit-transition: background-image 2s ease;
+*/}
+
+.caption {
+	z-index: 100;
+	position: absolute;
+	font-family: Georgia;
+	font-size: 14px;
+	width: 200px;
+	max-height: 600px;
+	color: white;
+	background: rgba(0,0,0,.8);
+	border: 1px solid rgba(0,0,0,1);
+	box-shadow: 0 1px 3px -1px rgba(0,0,0,0.8),inset 0 0 1px rgba(255,255,255,0.07),inset 0 0 2px rgba(255,255,255,0.15);
+	padding: 10px;
+	overflow: scroll;
+	-webkit-transition: opacity 0.5s ease;
+}
+
+.pushRight {
+	left: -10px;	
+}
+
+.pushLeft {
+	right: -10px;
+}
+
+.pushTop {	
+	bottom: -10px;
+}
+
+.pushBottom {
+	top: -10px;
+}
+
+.openup {
+	bottom: 10px;
+}
+
+.opendown {
+	top: 10px;
+}
+
+.openright {
+	left: 10px;
+}
+
+.openleft {
+	right: 10px;
+}
+
+.close {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.open {
+	visibility: visible;
+	opacity: 1;
+}
