@@ -60,21 +60,21 @@
 				requestAnimationFrame(render);
 
 
-				if (accl.x > 0){
+				if (accl.x > 5){
 					if (cube.rotation.y < 0.75){
 						cube.rotation.y += 0.01;
 					}
-				}else if (accl.x < 0){
+				}else if (accl.x < -5){
 					if (cube.rotation.y > -0.75){
 						cube.rotation.y -= 0.01;
 					}
 				}
 
-				if (accl.y > 0){
+				if (accl.y > 5){
 					if (cube.rotation.x < 0.75){
 						cube.rotation.x += 0.01;
 					}
-				}else if (accl.y < 0){
+				}else if (accl.y < -5){
 					if (cube.rotation.x > -0.75){
 						cube.rotation.x -= 0.01;
 					}
