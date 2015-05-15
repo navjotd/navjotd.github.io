@@ -38,15 +38,15 @@
 
 			if (window.DeviceOrientationEvent) {
 			    window.addEventListener("deviceorientation", function () {
-			        tilt([event.beta, event.gamma]);
+			        tilt(event.beta, event.beta, event.gamma);
 			    }, true);
 			} else if (window.DeviceMotionEvent) {
 			    window.addEventListener('devicemotion', function () {
-			        tilt([event.acceleration.x * 2, event.acceleration.y * 2]);
+			        tilt(event.acceleration.x * 2, event.acceleration.y * 2, event.acceleration.z * 2);
 			    }, true);
 			} else {
 			    window.addEventListener("MozOrientation", function () {
-			        tilt([orientation.x * 50, orientation.y * 50]);
+			        tilt(orientation.x * 50, orientation.y * 50,orientation.z * 50);
 			    }, true);
 			}
 
@@ -82,25 +82,25 @@
 					
 				}
 
-				if(mouse.x > 0.5){
-					if (cube.rotation.y < 0.75){
-						cube.rotation.y += 0.01;
-					}
-				}else if(mouse.x < 0.5){
-					if (cube.rotation.y > -0.75){
-						cube.rotation.y -= 0.01;
-					}
-				}
+				// if(mouse.x > 0.5){
+				// 	if (cube.rotation.y < 0.75){
+				// 		cube.rotation.y += 0.01;
+				// 	}
+				// }else if(mouse.x < 0.5){
+				// 	if (cube.rotation.y > -0.75){
+				// 		cube.rotation.y -= 0.01;
+				// 	}
+				// }
 
-				if(mouse.y > 0.5){
-					if (cube.rotation.x < 0.75){
-						cube.rotation.x += 0.01;
-					}
-				}else if(mouse.y < 0.5){
-					if (cube.rotation.x > -0.75){
-						cube.rotation.x -= 0.01;
-					}
-				}
+				// if(mouse.y > 0.5){
+				// 	if (cube.rotation.x < 0.75){
+				// 		cube.rotation.x += 0.01;
+				// 	}
+				// }else if(mouse.y < 0.5){
+				// 	if (cube.rotation.x > -0.75){
+				// 		cube.rotation.x -= 0.01;
+				// 	}
+				// }
 
 
 				renderer.render(scene, camera);
