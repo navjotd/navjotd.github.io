@@ -36,25 +36,29 @@
 				mouse.y = (e.clientY / window.innerHeight);
 			}
 
-			if (window.DeviceOrientationEvent) {
-			    window.addEventListener("deviceorientation", function () {
-			        tilt(event.beta, event.beta, event.gamma);
-			    }, true);
-			} else if (window.DeviceMotionEvent) {
-			    window.addEventListener('devicemotion', function () {
-			        tilt(event.acceleration.x * 2, event.acceleration.y * 2, event.acceleration.z * 2);
-			    }, true);
-			} else {
-			    window.addEventListener("MozOrientation", function () {
-			        tilt(orientation.x * 50, orientation.y * 50,orientation.z * 50);
-			    }, true);
-			}
+			// if (window.DeviceOrientationEvent) {
+			//     window.addEventListener("deviceorientation", function () {
+			//         tilt(event.beta, event.beta, event.gamma);
+			//     }, true);
+			// } else if (window.DeviceMotionEvent) {
+			//     window.addEventListener('devicemotion', function () {
+			//         tilt(event.acceleration.x * 2, event.acceleration.y * 2, event.acceleration.z * 2);
+			//     }, true);
+			// } else {
+			//     window.addEventListener("MozOrientation", function () {
+			//         tilt(orientation.x * 50, orientation.y * 50,orientation.z * 50);
+			//     }, true);
+			// }
 
-			function tilt(x, y, z){
-				accl.x = x;
-				accl.y = y;
-				accl.z = z;
+			window.ondevicemotion = function(e){
+				accl.x = event.accelerationIncludingGravity.x * 5;
+				accl.y = event.accelerationIncludingGravity.y * 5;
 			}
+			// function tilt(x, y, z){
+			// 	accl.x = x;
+			// 	accl.y = y;
+			// 	accl.z = z;
+			// }
 
 			function render() {
 				requestAnimationFrame(render);
@@ -80,11 +84,11 @@
 					}
 				}
 
-				if (accl.z > 0){
+				// if (accl.z > 0){
 
-				}else if (accl.z < 0){
+				// }else if (accl.z < 0){
 					
-				}
+				// }
 
 				// if(mouse.x > 0.5){
 				// 	if (cube.rotation.y < 0.75){
