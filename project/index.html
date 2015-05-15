@@ -71,9 +71,13 @@
 				}
 
 				if (accl.y > 0){
-
+					if (cube.rotation.x < 0.75){
+						cube.rotation.x += 0.01;
+					}
 				}else if (accl.y < 0){
-
+					if (cube.rotation.x > -0.75){
+						cube.rotation.x -= 0.01;
+					}
 				}
 
 				if (accl.z > 0){
