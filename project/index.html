@@ -66,11 +66,11 @@
 
 				if (accl.x > 5){
 					if (cube.rotation.y < 0.75){
-						cube.rotation.y += 0.01;
+						cube.rotation.y -= 0.01;
 					}
 				}else if (accl.x < -5){
 					if (cube.rotation.y > -0.75){
-						cube.rotation.y -= 0.01;
+						cube.rotation.y += 0.01;
 					}
 				}
 
