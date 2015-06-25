@@ -43,7 +43,7 @@
 	position: absolute;
 	width: 100%;
 	bottom: 0px;
-	letter-spacing: .8em;
+	letter-spacing: .65em;
 	text-align: center;
 	padding: 10px 10px;
 	border: 2px solid white;
@@ -58,19 +58,16 @@
 		float: none;
 		display: block;
 		margin: 0 auto;
+		width: 80%
 	}
 
 	.product-details {
 		display: block;
 		float: none;
-		width: 250px;
+		width: 80%;
 		padding: 0;
 		margin: 0 auto;
 		margin-top: 30px;
 		height: 200px;
-	}
-
-	.product-purchase {
-		bottom: auto;
 	}
 }
