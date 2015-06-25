@@ -1,5 +1,3 @@
-var s = skrollr.init();
-
 $(document).ready(function(){
     site.resize();
     $(window).resize(function(){
@@ -9,10 +7,10 @@ $(document).ready(function(){
 
 var site = {
     resize: function(){
-        var Imgposition = $('.feature').position();
+        var Imgposition = ($(window).width() - $('.base').width()) / 2;
         var width = $('#logo').width();
-        var val2 = Imgposition.left/2 - 103;
-        var ans = Imgposition.left/2 - width/2
+        var val2 = Imgposition/2 - 103;
+        var ans = Imgposition/2 - width/2;
         var value = (ans >= 10)? ans: 10;
         $('.left').css('left', val2);
         $('.right').css('right', val2);
