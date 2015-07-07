@@ -48,7 +48,15 @@
 			<div class="product-details">
 				<h1 class="product-name">Product Title</h1>
 				<p class="product-description"> product description. Lorem ipsum young thug sucks on rich homie quans wrinkly nuts.</p>
-				<a class="product-purchase">PURCHASE</a>
+				<form action="https://grillz.herokuapp.com/" method="POST">
+				    <script
+				        src="https://checkout.stripe.com/checkout.js"
+				        class="stripe-button"
+				        data-key="pk_test_R9tjgdINh1S1d8whAYab6OFX"
+				        data-amount="2000"
+				    ></script>
+				    <input name="amount" value="2000" type="hidden">
+				</form>
 			</div>
 		</div>
 	</div>
