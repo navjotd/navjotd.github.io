@@ -26,7 +26,7 @@
 	</header>
 
 	<!-- <div data-0="background-color:rgb(0,0,255);" data-500="background-color:rgb(255,0,0);">WOOOT</div> -->
-	<form action="https://grillz.herokuapp.com/" method="POST">
+	<!-- <form action="https://grillz.herokuapp.com/" method="POST">
 	    <script
 	        src="https://checkout.stripe.com/checkout.js"
 	        class="stripe-button"
@@ -34,7 +34,7 @@
 	        data-amount="2000"
 	    ></script>
 	    <input name="amount" value="2000" type="hidden">
-	</form>
+	</form> -->
 
 	<div class="base">
 		<div class="product-container">
@@ -42,7 +42,7 @@
 			<div class="product-details">
 				<h1 class="product-name">Product Title</h1>
 				<p class="product-description"> product description. Lorem ipsum young thug sucks on rich homie quans wrinkly nuts.</p>
-				<a class="product-purchase">PURCHASE</a>
+				<button id = "button1" class="product-purchase">BUY</button>
 			</div>
 		</div>
 
@@ -58,5 +58,34 @@
 
 	<script type="text/javascript" src="scripts/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="scripts/sub.js"></script>
+
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+
+	<script>
+	  var handler = StripeCheckout.configure({
+	    key: 'pk_test_R9tjgdINh1S1d8whAYab6OFX',
+	    token: function(token) {
+	    	debugger;
+	    },
+	    amount: 2000,
+	    currency: "cad"
+	  });
+
+	  $('#button1').on('click', function(e) {
+	    // Open Checkout with further options
+	    handler.open({
+	      name: 'Grillz',
+	      description: 'Buy some grillz',
+	      currency: "cad",
+	      amount: 2000
+	    });
+	    e.preventDefault();
+	  });
+
+	  // Close Checkout on page navigation
+	  $(window).on('popstate', function() {
+	    handler.close();
+	  });
+	</script>
 </body>
 </html>
