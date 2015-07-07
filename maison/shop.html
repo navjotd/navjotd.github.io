@@ -101,7 +101,6 @@
 	        />
 
 	        <script src="https://checkout.stripe.com/checkout.js"></script>
-	        <input name="amount" value="2000" type="hidden">
 	        <script>
 	        $(document).ready(function() {
 	            $(':submit').on('click', function(event) {
@@ -115,6 +114,7 @@
 	                        $form.append($('<input>').attr({ type: 'hidden', name: 'stripeToken', value: result.id })).submit();
 	                    },
 	                    key: 'pk_test_R9tjgdINh1S1d8whAYab6OFX',
+	                    amount: 2000,
 	                });
 
 	                StripeCheckout.open(opts);
