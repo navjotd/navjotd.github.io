@@ -60,7 +60,7 @@
 	<script type="text/javascript" src="scripts/sub.js"></script>
 
 	<script src="https://checkout.stripe.com/checkout.js"></script>
-
+<!-- 
 	<script>
 	  var handler = StripeCheckout.configure({
 	    key: 'pk_test_R9tjgdINh1S1d8whAYab6OFX',
@@ -87,5 +87,39 @@
 	    handler.close();
 	  });
 	</script>
+ -->
+	<form action="https://grillz.herokuapp.com/" method="post">
+
+	        <input 
+	            type="submit" 
+	            value="Pay with Card"
+	            data-key="pk_test_R9tjgdINh1S1d8whAYab6OFX"
+	            data-amount="2000"
+	            data-currency="cad"
+	            data-name="Grillz"
+	            data-description="Stripe payment for $5"
+	        />
+
+	        <script src="https://checkout.stripe.com/checkout.js"></script>
+	        <script>
+	        $(document).ready(function() {
+	            $(':submit').on('click', function(event) {
+	                event.preventDefault();
+
+	                var $button = $(this),
+	                    $form = $button.parents('form');
+
+	                var opts = $.extend({}, $button.data(), {
+	                    token: function(result) {
+	                        $form.append($('<input>').attr({ type: 'hidden', name: 'stripeToken', value: result.id })).submit();
+	                    },
+	                    key: 'pk_test_R9tjgdINh1S1d8whAYab6OFX',
+	                });
+
+	                StripeCheckout.open(opts);
+	            });
+	        });
+	        </script>
+	</form>
 </body>
 </html>
