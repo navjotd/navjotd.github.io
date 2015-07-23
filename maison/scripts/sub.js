@@ -17,3 +17,16 @@ var site = {
         $('#logo').css('left', value);
     }
 };
+
+
+$('.product-picture, .close-button').click(function() {
+    if ($('.lightbox-wrapper').hasClass('hide')) {
+        $('.lightbox-wrapper').removeClass('hide');
+        $('.lightbox-wrapper').addClass('show');
+        $('body').addClass('noScroll');
+    } else {
+        $('.lightbox-wrapper').removeClass('show');
+        $('.lightbox-wrapper').addClass('hide');
+        $('body').removeClass('noScroll');
+    }
+})
