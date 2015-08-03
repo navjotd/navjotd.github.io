@@ -1,0 +1,52 @@
+#press {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+	max-width: 600px;
+	margin-top: 30px;
+	text-align: center;
+	
+}
+
+#press img {
+	display: inline-block;
+	margin-top: 120px;
+	text-align: center;
+}
+
+.cc {
+	width: 170px;
+}
+
+.aded {
+	height: 160px;
+	margin-left: 130px;
+}
+
+.dec {
+	width: 350px;
+}
+
+@media all and (max-width: 720px) {
+	
+	#press {
+		max-width: 200px ;
+	}
+	
+	#press img {
+		margin-top: 70px;
+	}
+	
+	.aded {
+		margin-left: 0px;
+	}
+	
+	.dec {
+		width: 200px;
+	}
+	
+	.cc {
+		width: 100px;
+	}
+	
+}

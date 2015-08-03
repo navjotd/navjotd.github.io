@@ -1,10 +1,19 @@
+
+
 .product-container {
-	width: 582px;
-	margin: 0 auto;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 	color: white;
 	font-family: inherit;
-	overflow: hidden;
 	margin-top: 100px;
+	overflow: auto;
+	width: 100%;
+}
+
+.product-container a {
+	text-decoration: none;
+	color: white;
 }
 
 .product-picture {
@@ -24,52 +33,132 @@
 	width: 300px;
 	height: 250px;
 	margin-left: 32px;
-	font-weight: 300;
+	font-weight: 200;
+	line-height: 150%;
 }
 
-.product-details .product-name {
+.product-details .product-name, .product-price {
 	padding: 0;
 	margin: 0;
 	font-family: inherit;
-	font-size: 16px;
+	font-size: 19px;
 	font-weight: 300;
+
 }
 
 .product-details .product-description {
 	font-style: italic;
+	margin-bottom: 20px;
 }
 
 .product-details .product-purchase {
 	position: absolute;
+	left: 0;
 	width: 100%;
-	bottom: 0px;
+	bottom: 1px;
 	letter-spacing: .65em;
 	text-align: center;
 	padding: 10px 10px;
 	border: 2px solid white;
 }
 
-@media (max-width: 850px) {
-	.product-container {
-		width: 75%;
-	}
+select {
+	border: none;
+	border-bottom: 1px solid white;
+	-webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  padding: 6px;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 300;
+  background-color: #000;
+  color: white;
+  margin-bottom: 10px;
+  margin-top: -5px;
+  background: url("/assets/arrow.svg") no-repeat right;
+  -webkit-background-size: 10px;
+  background-size: 10px;
+}
 
+select:focus {
+	outline: none;
+}
+
+#select-container {
+	margin-bottom: 10px;
+}
+
+.last-select {
+	border: none;
+}
+
+input {
+	width: 100%;
+	background-color: #000;
+	color: white;
+	border: none;
+	border-bottom: 1px solid white;
+	padding: 6px;
+	margin-bottom: 10px;
+	margin-top: -5px;
+}
+
+input:focus {
+	outline: none;
+}
+
+#payment-wrap h2, h3 {
+	text-align: center;
+	letter-spacing: .3em;
+	font-weight: 700;
+}
+
+#order-sum {
+	text-align: center;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white; 
+}
+
+:-ms-input-placeholder {  
+   color: white;
+}
+
+#payment-wrap {
+	margin-bottom: 50px;
+}
+
+@media (max-width: 850px) {
 	.product-picture {
 		float: none;
 		display: block;
 		margin: 0 auto;
-		width: 80%
+		width: 90%;
 	}
 
 	.product-details {
 		display: block;
 		float: none;
-		width: 80%;
+		width: 90%;
 		padding: 0;
 		margin: 0 auto;
 		margin-top: 30px;
-		height: 200px;
 	}
+
+	.product-purchase {
+		position: relative;
+	}
+
+
 }
 
 .lightbox-wrapper {
@@ -80,12 +169,13 @@
 	height: 100vh;
 	left: 0;
 	top: 0;
+	transition: opacity .5s ease;
 }
 
 .lightbox {
 	background-color: black;
 	position: absolute;
-	height: 500px;
+	height: 520px;
 	width: 780px;
 	transform: translate(-50%, -50%);
 	top: 50%;
@@ -97,6 +187,7 @@
 	width: 100%
 }
 
+
 .lightbox-image {
 	float: left;
 	display: inline-block;
@@ -105,7 +196,36 @@
 	height: 250px;
 	width: 250px;
 	margin: 5px;
+	background-image: url(../assets/prod1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
 }
+
+#img1 {
+	background-image: url(http://static1.squarespace.com/static/53cf089fe4b0146dcf5d3e97/53cf16dfe4b0c09c6f118baf/54d17befe4b0ca867cc67bc0/1423014895217/10729274_541516715990150_690844786_n.jpg?format=750w);
+}
+
+#img2 {
+	background-image: url(http://static1.squarespace.com/static/53cf089fe4b0146dcf5d3e97/53cf0d49e4b08a008b3634c9/54d172aee4b08f56dad5ce13/1423012527676/1390362_999204393429390_2096566323_n.jpg?format=750w);
+}
+
+#img3 {
+	background-image: url(http://static1.squarespace.com/static/53cf089fe4b0146dcf5d3e97/53cf12dbe4b0a0ba4e86b69c/54f67ebae4b0952b4dfcdd60/1425440922549/?format=750w);
+}
+
+#img4 {
+	background-image: url(http://static1.squarespace.com/static/53cf089fe4b0146dcf5d3e97/53cf1360e4b0141d9ac8b18a/54f67d91e4b015b0de512d1e/1425440300665/?format=750w);
+}
+
+#img5 {
+	background-image: url(http://static1.squarespace.com/static/53cf089fe4b0146dcf5d3e97/53cf1578e4b01ee22a509bd6/5413b8fae4b03f8abbd1f14b/1410809649354/740787982696876887_549135417.jpg?format=750w);
+}
+
+#img6 {
+	background-image: url(http://static1.squarespace.com/static/53cf089fe4b0146dcf5d3e97/53cf1578e4b01ee22a509bd6/53cf15c7e4b05b0fba759130/1410809659357/?format=750w);
+}
+
 
 .close-button {
 	width: 50px;
@@ -114,15 +234,17 @@
 	right: 25px;
 	top: 25px;
 	border-radius: 100%;
-	background-color: red;
+	background-image: url(../assets/close.png);
 }
 
 .hide {
 	display: none;
+	opacity: 0;
 }
 
 .show {
 	display: block;
+	opacity: 1
 }
 
 .noScroll {

@@ -16,6 +16,9 @@ var site = {
         var value = (ans >= 10)? ans: 10;
         $('.left').css('left', val2);
         $('.right').css('right', val2);
-        $('#logo').css('left', value);
+				if (window.innerWidth > 600) {
+					$('#logo').css('left', value);	
+				}
+        
     }
 };

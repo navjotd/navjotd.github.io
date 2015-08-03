@@ -16,6 +16,7 @@
 	margin: 0;
 	padding: 0;
 	/*background-color: red;*/
+	font-size: 0.8em;
 	top: 70%;
 	z-index: 100;
 	letter-spacing: .15em;
@@ -25,7 +26,7 @@
 .right {
 	transform: rotate(270deg);
 	-webkit-transform: rotate(270deg);
-	right: 0;
+	right: 0px;
 }
 
 .left {
@@ -37,7 +38,7 @@
 .nav li {
 	/*background-color: blue;*/
 	display: inline-block;
-	margin-right: 10px;
+	margin-right: 25px;
 }
 
 .nav li:last-of-type {
@@ -50,9 +51,22 @@
 }
 
 .nav li a:hover {
-	text-decoration: underline;
+	text-decoration: none;
+	border-bottom: 1px solid #FF4446;
+	
 }
 
 .nav li a:visited {
 	color: #FF4446;
+}
+
+.current-link {
+	border-bottom: 1px solid #FF4446;
+	cursor: default;
+}
+
+@media all and (max-width: 620px) {
+	okay {
+		font-size: 16px;
+	}
 }

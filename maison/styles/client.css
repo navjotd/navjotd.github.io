@@ -1,0 +1,19 @@
+#clients {
+	width: 100%;
+	color: white;
+	text-align: center;
+	margin-top: 120px;
+	letter-spacing: .3em;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+#clients div {
+	margin-top: 160px;
+}
+
+@media all and (max-width: 620px) {
+	#clients {
+		font-size: 16px;
+	}
+}
