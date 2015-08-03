@@ -16,8 +16,9 @@
 
 	<script>
 	  var handler = StripeCheckout.configure({
-	    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+	    key: 'pk_test_R9tjgdINh1S1d8whAYab6OFX',
 	    token: function(token) {
+	    	debugger;
 	    	var $form = $('#payment-form');
 	     	$form.append($('<input type="hidden" name="stripeToken" />').val(token));
     		$form.get(0).submit();
