@@ -11,35 +11,19 @@
 
 </head>
 <body>
-	<form id="payment-form" action="https://stripe56.herokuapp.com/pay" method="POST">
-	<button id="customButton">Purchase</button>
-
-	<script>
-	  var handler = StripeCheckout.configure({
-	    key: 'pk_test_R9tjgdINh1S1d8whAYab6OFX',
-	    token: function(token) {
-	    	debugger;
-	    	var $form = $('#payment-form');
-	     	$form.append($('<input type="hidden" name="stripeToken" />').val(token.id));
-    		$form.get(0).submit();
-	    }
-	  });
-
-	  $('#customButton').on('click', function(e) {
-	    // Open Checkout with further options
-	    handler.open({
-	      name: 'Stripe.com',
-	      description: '2 widgets',
-	      amount: 2000
-	    });
-	    e.preventDefault();
-	  });
-
-	  // Close Checkout on page navigation
-	  $(window).on('popstate', function() {
-	    handler.close();
-	  });
-	</script>
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+    
+	<form action="https://stripe56.herokuapp.com/pay" method="POST">
+	  <script
+	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	    data-key="pk_test_R9tjgdINh1S1d8whAYab6OFX"
+	    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+	    data-name="Matt's Widgets and Gizmos"
+	    data-description="2 widgets ($20.00)"
+	    data-amount="2000"
+	    data-billingAddress="true"
+	    data-shippingAddress="true">
+	  </script>
 	</form>
 </body>
 </html>
