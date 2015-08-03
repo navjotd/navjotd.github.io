@@ -5,78 +5,41 @@
 	<link rel="stylesheet" type="text/css" href="styles/nav.css">
 	<link rel="stylesheet" type="text/css" href="styles/sub.css">
 	<link rel="stylesheet" type="text/css" href="styles/shop.css">
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+	<script type="text/javascript" src="scripts/jquery-1.11.3.min.js"></script>
+
+
 </head>
 <body>
-	<header>
+	<button id="customButton">Purchase</button>
 
-		<div id="logo"></div>
+	<script>
+	  var handler = StripeCheckout.configure({
+	    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+	    token: function(token) {
+	      $.ajax({
+	      	type: "POST",
+	      	url: "https://stripe56.herokuapp.com/pay",
+	      	data: token,
+	      	success: function(data) {debugger;}
+	      });
+	    }
+	  });
 
-		<ul class="nav left">
-			<li><a href="index.html"> Home </a></li>
-			<li><a href=""> Contact </a></li>
-			<li><a href="about.html"> About </a></li>
-		</ul>
+	  $('#customButton').on('click', function(e) {
+	    // Open Checkout with further options
+	    handler.open({
+	      name: 'Stripe.com',
+	      description: '2 widgets',
+	      amount: 2000
+	    });
+	    e.preventDefault();
+	  });
 
-		<ul class="nav right">
-			<li><a href="shop.html"> Shop </a></li>
-			<li><a href=""> Press </a></li>
-			<li><a href=""> Clients </a></li>
-		</ul>
-
-	</header>
-
-	<div class="lightbox-wrapper hide">
-		<div class="close-button"></div>
-		<div class="lightbox">
-			<div class="lightbox-scroll">
-				<div class="lightbox-image" style="background-image: url(../assets/lightbox/1.jpg)"> </div>
-				<div class="lightbox-image" style="background-image: url(../assets/lightbox/2.jpg)"> </div>
-				<div class="lightbox-image" style="background-image: url(../assets/lightbox/3.jpg)"> </div>
-				<div class="lightbox-image" style="background-image: url(../assets/lightbox/4.jpg)"> </div>
-				<div class="lightbox-image" style="background-image: url(../assets/lightbox/5.jpg)"> </div>
-				<div class="lightbox-image" style="background-image: url(../assets/lightbox/6.jpg)"> </div>
-				<div class="lightbox-image" style="background-image: url(../assets/lightbox/7.jpg)"> </div>
-			</div>
-		</div>
-	</div>
-
-	<div class="base">
-		<div class="product-container">
-			<div class="product-picture"></div>
-			<div class="product-details">
-				<h1 class="product-name">Product Title</h1>
-				<p class="product-description"> product description. Lorem ipsum young thug sucks on rich homie quans wrinkly nuts.</p>
-				<form action="https://grillz.herokuapp.com/" method="POST">
-				    <script
-				        src="https://checkout.stripe.com/checkout.js"
-				        class="stripe-button"
-				        data-key="pk_test_R9tjgdINh1S1d8whAYab6OFX"
-				        data-amount="2000"
-				    ></script>
-				    <input name="amount" value="2000" type="hidden">
-				</form>
-			</div>
-		</div>
-
-		<div class="product-container">
-			<div class="product-picture"></div>
-			<div class="product-details">
-				<h1 class="product-name">Product Title</h1>
-				<p class="product-description"> product description. Lorem ipsum young thug sucks on rich homie quans wrinkly nuts.</p>
-				<form action="https://grillz.herokuapp.com/" method="POST">
-				    <script
-				        src="https://checkout.stripe.com/checkout.js"
-				        class="stripe-button"
-				        data-key="pk_test_R9tjgdINh1S1d8whAYab6OFX"
-				        data-amount="2000"
-				    ></script>
-				    <input name="amount" value="2000" type="hidden">
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<script type="text/javascript" src="scripts/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="scripts/sub.js"></script>
+	  // Close Checkout on page navigation
+	  $(window).on('popstate', function() {
+	    handler.close();
+	  });
+	</script>
 </body>
 </html>
