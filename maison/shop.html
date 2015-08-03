@@ -1,29 +1,28 @@
 <html>
-<head>
-	<title>Maison Raksha</title>
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="styles/nav.css">
-	<link rel="stylesheet" type="text/css" href="styles/sub.css">
-	<link rel="stylesheet" type="text/css" href="styles/shop.css">
-	<script src="https://checkout.stripe.com/checkout.js"></script>
-	<script type="text/javascript" src="scripts/jquery-1.11.3.min.js"></script>
-
-
-</head>
-<body>
-	<script src="https://checkout.stripe.com/checkout.js"></script>
-    
-	<form action="https://stripe56.herokuapp.com/pay" method="POST">
-	  <script
-	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-	    data-key="pk_test_R9tjgdINh1S1d8whAYab6OFX"
-	    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-	    data-name="Matt's Widgets and Gizmos"
-	    data-description="2 widgets ($20.00)"
-	    data-amount="2000"
-	    data-billingAddress="true"
-	    data-shippingAddress="true">
-	  </script>
-	</form>
-</body>
+	<head>
+		<title>Maison Raksha</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" type="text/css" href="styles/nav.css">
+		<link rel="stylesheet" type="text/css" href="styles/sub.css">
+		<link rel="stylesheet" type="text/css" href="styles/shop.css">
+		<script src="https://checkout.stripe.com/checkout.js"></script>
+		<script type="text/javascript" src="scripts/jquery-1.11.3.min.js"></script>
+	</head>
+	<body>
+		<script src="https://checkout.stripe.com/checkout.js"></script>
+	    
+		<form action="https://stripe56.herokuapp.com/pay" method="POST">
+		  <script
+		    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		    data-key="pk_test_R9tjgdINh1S1d8whAYab6OFX"
+		    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+		    data-name="Matt's Widgets and Gizmos"
+		    data-description="2 widgets ($20.00)"
+		    data-amount="2000"
+		    data-billingAddress="true"
+		    data-shippingAddress="true">
+		  </script>
+		  <input type="hidden" name="amount"> 1000 </input>
+		</form>
+	</body>
 </html>
