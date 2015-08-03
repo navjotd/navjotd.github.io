@@ -20,7 +20,7 @@
 	    token: function(token) {
 	    	debugger;
 	    	var $form = $('#payment-form');
-	     	$form.append($('<input type="hidden" name="stripeToken" />').val(token));
+	     	$form.append($('<input type="hidden" name="stripeToken" />').val(token.id));
     		$form.get(0).submit();
 	    }
 	  });
