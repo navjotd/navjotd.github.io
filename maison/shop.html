@@ -11,18 +11,16 @@
 
 </head>
 <body>
+	<form id="payment-form" action="https://stripe56.herokuapp.com/pay" method="POST">
 	<button id="customButton">Purchase</button>
 
 	<script>
 	  var handler = StripeCheckout.configure({
 	    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
 	    token: function(token) {
-	      $.ajax({
-	      	type: "POST",
-	      	url: "https://stripe56.herokuapp.com/pay",
-	      	data: token,
-	      	success: function(data) {debugger;}
-	      });
+	    	var $form = $('#payment-form');
+	     	$form.append($('<input type="hidden" name="stripeToken" />').val(token));
+    		$form.get(0).submit();
 	    }
 	  });
 
@@ -41,5 +39,6 @@
 	    handler.close();
 	  });
 	</script>
+	</form>
 </body>
 </html>
