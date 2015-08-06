@@ -88,14 +88,48 @@
 //     }
 // });
 
+function setFormData(form, val) {
+  debugger;
+  form.val(val);
+}
+
+$(".color-select").change(function() {
+  debugger;
+  var $productContainer = $(this).closest('.product-container');
+  var $colorInput = $productContainer.find('input[name="color"]');
+  var $colorVal = $(this).val();
+  debugger;
+  setFormData($colorInput, $colorVal);
+})
+
+$(".karat-select").change(function() {
+  debugger;
+  var $productContainer = $(this).closest('.product-container');
+  var $karatInput = $productContainer.find('input[name="karat"]');
+  var $karatVal = $(this).val();
+  debugger;
+  setFormData($karatInput, $karatVal);
+})
+
 $(".item-select").change(function() {
+  var $productContainer = $(this).closest('.product-container');
+  var $images = $productContainer.find('.lightbox-image');
+  var $pic = $productContainer.find('.product-picture')
   var value = $(this).val();
   var option = $(this).find('option[value="' + value + '"]')
+  var index = $(this).find('option').index(option);
+  var img = $($images[index-1]).css('background-image');
+  var $productInput = $productContainer.find('input[name="product"]');
+  debugger;
+  setFormData($productInput, value);
+
+  $pic.css('background-image', img);
+  
   var karats = option.attr('data-karats').toLowerCase();
   var colors = option.attr('data-colors').toLowerCase();
 
-  var colorSelect = $(this).siblings('.color-select');
-  var karatSelect = $(this).siblings('.karat-select');
+  var colorSelect = $productContainer.find('.color-select');
+  var karatSelect = $productContainer.find('.karat-select');
 
   colorOptions = colorSelect.find('option');
   karatOptions = karatSelect.find('option');
@@ -115,6 +149,7 @@ $(".item-select").change(function() {
   for (var i = 0; i < karatOptions.length; i++) {
     var optionKarat = $(karatOptions[i]).val().toLowerCase();
     if (!(karats.indexOf(optionKarat) > -1)) {
+      debugger;
       $(karatOptions[i]).attr("disabled", "disabled");
     }
   }

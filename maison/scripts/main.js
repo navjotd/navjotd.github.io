@@ -16,9 +16,12 @@ var site = {
         var value = (ans >= 10)? ans: 10;
         $('.left').css('left', val2);
         $('.right').css('right', val2);
-				if (window.innerWidth > 600) {
-					$('#logo').css('left', value);	
-				}
+		if (window.innerWidth > 600) {
+			$('#logo').css('left', value);	
+		}
+
+        var num = Math.floor(0.075 * window.innerWidth);
+        Flicker('flicker', num, 1, 1, {r: 255, g: 255, b: 255, a: 1});
         
     }
 };

@@ -27,12 +27,14 @@ function Circle(posn, radius, color, opacity) {
 	this.color = color;
 	this.opacity = opacity;
 	this.isDecreasing = true;
+	this.flickerRate = getRandomArbitrary(0.001, 0.4);
 }
 
 /*
 - if the opacity is 1, then 
 */
 Circle.prototype.draw = function(context) {
+
 	if (this.isDecreasing && this.opacity <= 0) {
 		this.opacity = 0;
 		this.isDecreasing = false;
@@ -44,12 +46,18 @@ Circle.prototype.draw = function(context) {
 	}
 
 	if (this.isDecreasing) {
-		this.opacity = this.opacity - 0.6;
+		this.opacity = this.opacity - this.flickerRate;
 	} else {
-		this.opacity = this.opacity + 0.6;
+		this.opacity = this.opacity + this.flickerRate;
+	}
+	
+	var opacity = this.opacity;
+	var randomNum = getRandomArbitrary(0,1);
+	if (randomNum > 0.5) {
+		opacity = 0;
 	}
 
-	context.fillStyle = getRGBA(this.color, this.opacity);
+	context.fillStyle = getRGBA(this.color, opacity);
 	context.beginPath();
 	context.arc(this.posn.x, this.posn.y, this.radius, 0, 2 * Math.PI);
 	context.fill();
@@ -89,6 +97,6 @@ function Flicker(canvasId, numCircles, radius, animationDuration, color) {
 	animate();
 }
 
-var num = Math.floor(0.1 * window.innerWidth);
+var num = Math.floor(0.075 * window.innerWidth);
 Flicker('flicker', num, 1, 1, {r: 255, g: 255, b: 255, a: 1});
 
