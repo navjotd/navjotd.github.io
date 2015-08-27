@@ -1,8 +1,11 @@
+.base {
+	padding-top: 200px;
+}
 
 #contact {
 	display: block;
 	margin: 0 auto;
-	margin-top: 200px;
+/*	margin-top: 200px;*/
 	max-width: 500px;
 	color: white;
 	letter-spacing: .15em;
@@ -16,7 +19,7 @@ h1 {
 	font-size: 20px;
 	font-weight: 700;
 	text-align: center;
-	margin-bottom:50px;
+	margin-bottom: 50px;
 	color: #ff4446
 }
 

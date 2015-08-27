@@ -113,6 +113,7 @@ $(".karat-select").change(function() {
 
 $(".item-select").change(function() {
   var $productContainer = $(this).closest('.product-container');
+  var $magnifyImg = $productContainer.find('.magnify');
   var $images = $productContainer.find('.lightbox-image');
   var $pic = $productContainer.find('.product-picture')
   var value = $(this).val();
@@ -124,6 +125,7 @@ $(".item-select").change(function() {
   setFormData($productInput, value);
 
   $pic.css('background-image', img);
+  $magnifyImg.css('background-image', img);
   
   var karats = option.attr('data-karats').toLowerCase();
   var colors = option.attr('data-colors').toLowerCase();

@@ -3,10 +3,6 @@ var gulp = require('gulp'),
     rename = require('gulp-rename');
 		livereload = require('gulp-livereload');
 var autoprefixer = require('gulp-autoprefixer');
-var imagemin = require('gulp-imagemin'),
-    cache = require('gulp-cache');
-var pngquant = require('imagemin-pngquant');
-var minifycss = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var gulp = require('gulp'),
   	connect = require('gulp-connect');
@@ -20,9 +16,6 @@ gulp.task('styles', function(){
     }}))
     .pipe(sass())
     .pipe(autoprefixer('last 2 versions'))
-    .pipe(gulp.dest('css/css/'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
     .pipe(gulp.dest('css/css/'))
 		.pipe(livereload());
 });

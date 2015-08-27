@@ -15,4 +15,11 @@ body {
 	position: relative;
 	width: 75%;
 	margin: 0 auto;
+	padding-top: 200px;
+}
+
+@media (max-width: 850px) {
+	.base {
+		padding-top: 100px !important;
+	}
 }

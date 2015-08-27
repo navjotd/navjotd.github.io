@@ -1,6 +1,7 @@
-body {
-	padding-top: 50px;
+.base {
+	padding-top: 200px;
 }
+
 .about-description {
 	color: white;
 	font-weight: 300;
@@ -11,7 +12,8 @@ body {
 	letter-spacing: .3em;
 	margin-bottom: 30px;
 	text-align: center;
-	font-weight: 300;
+	font-weight: 700;
+	color: #ff4446;
 }
 
 .about-description p {

@@ -53,7 +53,7 @@ Circle.prototype.draw = function(context) {
 	
 	var opacity = this.opacity;
 	var randomNum = getRandomArbitrary(0,1);
-	if (randomNum > 0.5) {
+	if (randomNum > 0.1) {
 		opacity = 0;
 	}
 

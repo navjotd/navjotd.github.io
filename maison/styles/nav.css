@@ -52,6 +52,7 @@
 
 .nav li a:hover {
 	text-decoration: none;
+	padding-bottom: 3px;
 	border-bottom: 1px solid #FF4446;
 	
 }
@@ -61,6 +62,7 @@
 }
 
 .current-link {
+	padding-bottom: 3px;
 	border-bottom: 1px solid #FF4446;
 	cursor: default;
 }
@@ -68,5 +70,14 @@
 @media all and (max-width: 620px) {
 	okay {
 		font-size: 16px;
+	}
+}
+
+@media (max-width: 850px) {
+
+	#logo {
+		position: relative;
+		left: 0px !important;
+		margin: 20px auto 0px auto;
 	}
 }
