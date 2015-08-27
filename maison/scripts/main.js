@@ -26,28 +26,3 @@ $(document).ready(function(){
         site.resize();
     });
 });
-
-var requestAnimationFrame = window.requestAnimationFrame || 
-                                    window.mozRequestAnimationFrame ||
-                                    window.webkitRequestAnimationFrame ||
-                                    window.msRequestAnimationFrame;
-
-$(window).scroll(function() {
-    scrolltop = $(document).scrollTop();
-})
-
-function infiniteScroll() {
-    console.log(scrolltop);
-    if (scrolltop < 0) {
-        console.log("going to bottom");
-        $(document).scrollTop($(document).height() - window.innerHeight);
-    }
-
-    if (scrolltop > $(document).height() - window.innerHeight) {
-        $(document).scrollTop(0);
-    }
-
-    requestAnimationFrame(infiniteScroll);
-}
-
-infiniteScroll();
