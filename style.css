@@ -1,0 +1,156 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Goudy Bookletter 1911', serif;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+
+}
+
+.projects li {
+	margin: 50px 0px ;
+	padding: 0;
+}
+
+#overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	/*background-color: rgba(0,0,0,.75);*/
+	z-index: -1;
+	transition: opacity .25s ease-in-out;
+	transition: background-color .25s ease-in-out;
+}
+
+.project-name {
+	font-size: 1.75em;
+	letter-spacing: .095em;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.collapsed {
+	height: 0px !important;
+	padding: 0px 15px !important;
+	margin: 2px 0px !important;
+	overflow: hidden;
+}
+
+.project-description {
+	font-family: 'Lato';
+	font-weight: 300;
+	line-height: 1.5em;
+	letter-spacing: .08em;
+	text-align: left;
+	width: 420px;
+	height: 100px;
+	margin: 20px 0px
+	transition: height .5s ease-out;
+	transition: padding .5s ease-out;
+	transition: margin .5s ease-out;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: 55% auto;
+	background-position: center center;
+	transition: background-image 0.5s ease-in-out;
+}
+
+#projects {
+	padding: 20px 35px;
+	text-align: center;
+	text-shadow: 0px 1px rgba(0, 0, 0, .25);
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	color: white;
+	z-index: 10000;
+	transition: opacity .5s ease-in-out;
+}
+
+#slide0 {
+	left: -100%;
+	background-image: url('assets/ink5.png')
+}
+
+#slide1 {
+	left: 0%;
+	background-image: url('assets/ink1.png')
+}
+
+#slide2 {
+	left: 100%;
+	background-image: url('assets/ink2.png')
+}
+
+#slide3 {
+	left: 200%;
+	background-image: url('assets/ink3.png')
+}
+
+#slide4 {
+	left: 300%;
+	background-image: url('assets/ink4.png')
+}
+
+#slide5 {
+	left: 400%;
+	background-image: url('assets/ink5.png')
+}
+
+#slide6 {
+	left: 500%;
+	background-image: url('assets/ink1.png')
+}
+
+.reset {
+	left: 0;
+}
+
+.slides {
+	z-index: -1;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0%;
+	top: 0%;
+}
+
+.dimProjects {
+	opacity: .5;
+}
+
+.hideOverlay {
+	opacity: 0;
+}
+
+.maisonOverlay {
+	background-color: rgba(255, 68, 70, .75);
+}
+
+.asOverlay {
+	background-color: rgba(91, 40, 131, .75);
+}
+
+.kandpOverlay {
+	background-color: rgba(255, 189, 216, .75);
+}
+
+.inkOverlay {
+	background-color: rgba(18, 116, 163, .75);
+}

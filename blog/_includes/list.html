@@ -1,0 +1,11 @@
+{% for post in paginator.posts %}
+	<div class="card blog-card center">
+		<a href="{{ post.url }}">
+			<div class="card-image center" style="background-image: url(/assets/{{ post.image }});"></div>
+			<div class="card-details"> 
+				<h1> {{ post.title }} </h1>
+				<h6> {{ post.categories }} </h6>
+			</div>
+		</a>	
+	</div>
+{% endfor %}

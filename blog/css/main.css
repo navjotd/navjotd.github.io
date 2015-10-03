@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: white;
+  margin: 0px;
+  padding: 0px; }
+
+.pagination {
+  text-align: center; }
+
+.home {
+  font-family: 'Open Sans', serif;
+  padding: 75px 15px; }
+
+a {
+  text-decoration: none; }
+
+.card {
+  width: 420px; }
+  .card .card-image {
+    max-width: 420px;
+    height: 420px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+  .card .card-details {
+    margin-bottom: 85px;
+    color: black;
+    font-weight: 400; }
+    .card .card-details h1 {
+      font-size: 1.5em;
+      letter-spacing: .04em;
+      margin-top: 20px;
+      margin-bottom: .25em; }
+    .card .card-details h6 {
+      font-size: .7em;
+      letter-spacing: .07em;
+      margin: 0; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto; }
+
+.post {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 75px 15px; }
+
+/*# sourceMappingURL=main.css.map */
