@@ -52,10 +52,12 @@ $('.project-name').click(function(e) {
 
 $('#projects').hover(function() {
 	$(this).removeClass('dimProjects');
+	$('#projects').addClass('noShadow');
 	$('#overlay').removeClass('hideOverlay');
 }, function() {
 	$(this).addClass('dimProjects');
 	$('#overlay').addClass('hideOverlay');
+	$('#projects').removeClass('noShadow')
 })
 
 
