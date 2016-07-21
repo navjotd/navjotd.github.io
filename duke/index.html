@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Duke Energy</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="duke.css">
+</head>
+<body>
+	<header>
+		<div id="headerVideoWrapper">
+			<video id="headerVideo" muted>
+				<source src="vid.mp4" type="video/mp4">
+			</video>
+			<div id="vidOverlay">
+				<div id="logoBg"> </div>
+				<div id="logo"> </div>
+				<div id="nav">
+					<span class="navItem"> <a href="#"> Products </a> </span>
+					<span class="navItem"> <a href="#"> Account </a> </span>
+					<span class="navItem"> <a href="#"> Contact </a> </span>
+					<span class="navItem"> <a href="#"> About </a> </span>
+				</div>
+				<div id="overlayContent">
+					<h1> Going Wind </h1>
+					<h6> Feel good about your energy</h6>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="content">
+		<h1> Sustainability Matters To Duke Energy</h1>
+		<h4> That's why we're ditching coal and going wind! </h4>
+		<img id="smallImg" src="img0.jpg"></img>
+		<h4> A leader in Wind power generation, Duke has invested $4 billion in wind energy. </h4>
+		<img src="img1.jpg"></img>
+		<h4> We are on track to add 400MW of new wind energy this year. that's 200,000 homes!</h4>
+		<img src="img2.jpg"></img>
+		<h4> Help us spread the word: 
+			<div id="social"> 
+				<a href="https://twitter.com/DukeEnergy"> <div id="tw"></div> </a>
+				<a href="https://www.facebook.com/duke.energy"> <div id="fb"> </div> </a>
+			</div>
+		</h4>
+	</div>
+	<script>
+		var vid = document.getElementById("headerVideo");
+		vid.play();
+		vid.addEventListener("timeupdate", function(e) {
+			if (this.currentTime > 100) {
+				this.currentTime = 0;
+			}
+		})
+	</script>
+</body>
+</html>
